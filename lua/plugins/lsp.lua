@@ -69,11 +69,24 @@ return {
           },
         },
       },
+      -- Add Rust LSP (rust-analyzer) here
+      rust_analyzer = {
+        settings = {
+          ['rust-analyzer'] = {
+            cargo = {
+              allFeatures = true,
+            },
+            procMacro = {
+              enable = true,
+            },
+          },
+        },
+      },
     }
 
     require('mason').setup()
     require('mason-tool-installer').setup {
-      ensure_installed = { 'clangd', 'cmake-language-server', 'stylua', 'clang-format' },
+      ensure_installed = { 'clangd', 'cmake-language-server', 'stylua', 'clang-format', 'rust-analyzer' },
     }
 
     require('mason-lspconfig').setup {
