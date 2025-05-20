@@ -82,11 +82,13 @@ return {
           },
         },
       },
+      pyright = {},
+      ruff_lsp = {},
     }
 
     require('mason').setup()
     require('mason-tool-installer').setup {
-      ensure_installed = { 'clangd', 'cmake-language-server', 'stylua', 'clang-format', 'rust-analyzer' },
+      ensure_installed = { 'clangd', 'cmake-language-server', 'stylua', 'clang-format', 'rust-analyzer', 'pyright', 'ruff-lsp' },
     }
 
     require('mason-lspconfig').setup {
